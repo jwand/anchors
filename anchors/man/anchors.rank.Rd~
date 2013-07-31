@@ -1,0 +1,145 @@
+% Created :  2002-10-05
+% Modified:  $Date: $
+% Revision:  $Revision: $
+% RCS-ID:    $Id: $
+\name{anchors.rank}
+\alias{anchors.rank}
+\alias{anchors.C}
+\alias{anchors.B}
+\title{Non-parametric analysis of surveys with vignette anchors}
+\description{
+  Non-parametric analysis of surveys with vignette anchors.
+}
+\usage{
+## generic function
+anchors.rank(adata, fdata, type, options)
+
+## B-rank alias
+anchors.B(adata, fdata, options)
+
+## C-rank alias
+anchors.C(adata, fdata, options)
+
+}
+\arguments{
+  \item{adata}{An anchors.data class object.  See help(anchors.data) for requirements.}
+  \item{fdata}{data frame from which adata was built }
+  \item{type}{"B" or "C" non-parametric rank scales}
+  \item{options}{object of class anchors.options}
+
+}
+
+\value{
+  \item{rank}{ list of components that describe non-paramtric ranks, including:
+
+    \item{span}{ A matrix with columns  rows
+      corresponding to the observations in the data for which both the
+      self-assessment and the vignettes are observed.
+      
+      The first column contains the lower bound of the rank interval, and
+      the second column contains the upper bound.  If a row has the same
+      value in both columns, then the rank value is a scalar value,
+      otherwise the rank lies somewhere in an interval.
+      
+      The columns will be named \code{Cs} and \code{Ce} for type "C", 
+      \code{Bs} and \code{Be} for type "B".
+    }
+    \item{weight}{matrix of weights, inverse proportion to span of interval
+      values}
+    \item{max}{Maximum rank possible for non-parametric method
+      
+      For "C" max is 2J+1, where J is the number of vignettes.
+      
+      For "B" max is J+1.
+    }
+    
+    \item{n.interval}{Number of cases that have interval values of C}
+  } %% end of rank
+
+  \item{summary}{ list of summary statistics about ranks}
+  \item{minentropy}{ Matrix specifying how interval rank values would be
+    allocated to scalar rank values to minimize entropy.}
+  \item{cpolr}{ a \code{cpolr} model that was used to estimate how to
+    allocate interval rank values to scalar rank values}
+  \item{type}{ The type of nonparamtric analysis (B or C) }
+
+}
+\section{anchors() and anchors.options()}{
+
+  Invoking methods B and C via 'anchors()' by default calculate two
+  additional models for allocating interval ranks to scalar values.
+  
+  Specifying 'anchors(..., method="B")' or 'anchors(..., method="C")' 
+  with no options is equivalent to,
+  
+  anchors(... , method="B",
+          options=anchors.options(rank.extras=c("minentropy","cpolr")) )
+
+  anchors(... , method="C",
+          options=anchors.options(rank.extras=c("minentropy","cpolr")) )
+
+  where the list of options are:
+  
+  \describe{
+    \item{rank.extras }{Choose one or more as vector of strings:
+
+      "minentropy": calculate ranks by breaking ties via \code{minimum.entropy}
+
+      "cpolr": calculate ranks by breaking ties via \code{cpolr}
+
+      "none": no extra caculations
+    }
+  }
+
+  To omit all extra calculations use,
+
+  anchors(... , options=anchors.options(rank.extras=c("none")))
+
+
+}
+\note{
+
+  Related materials and worked examples are available at
+  http://wand.stanford.edu/anchors/
+  
+}
+  
+\author{Jonathan Wand \url{http://wand.stanford.edu}}
+
+\references{
+  Wand, Jonathan. (2007). Credible Comparisons Using Interpersonally
+  Incomparable Data: Ranking self-evaluations relative to anchoring
+  vignettes or other common survey questions. 
+  copy at \url{http://wand.stanford.edu/research/wand_anchors.pdf}
+
+  Wand, Jonathan; Gary King; and Olivia Lau. (2007) ``Anchors: Software for
+  Anchoring Vignettes''. \emph{Journal of Statistical Software}.  Forthcoming.
+  copy at http://wand.stanford.edu/research/anchors-jss.pdf
+
+  Wand, Jonathan and Gary King. (2007)
+  Anchoring Vignetttes in R: A (different kind of) Vignette
+  copy at http://wand.stanford.edu/anchors/doc/anchors.pdf
+  
+  Gary King and Jonathan Wand. (2007) "Comparing Incomparable Survey
+  Responses: New Tools for Anchoring Vignettes," Political Analysis, 15,
+  1 (Winter): Pp. 46-66,
+  copy at http://gking.harvard.edu/files/abs/c-abs.shtml.
+  
+  King, Gary; Christopher J.L. Murray; Joshua A. Salomon; and Ajay
+  Tandon. (2004) "Enhancing the Validity and Cross-cultural Comparability of
+  Survey Research," American Political Science Review, Vol. 98, No. 1
+  (February): 191-207,
+  copy at http://gking.harvard.edu/files/abs/vign-abs.shtml
+  
+}
+\seealso{\code{\link{anchors}},
+         \code{\link{barplot.anchors.rank}},
+         \code{\link{summary.anchors.rank}}
+       }
+
+\examples{
+
+## see anchors
+
+}
+\keyword{models}

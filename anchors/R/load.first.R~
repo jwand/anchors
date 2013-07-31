@@ -1,0 +1,9 @@
+.onAttach <- function(...) {
+  mylib <- dirname(system.file(package = "anchors"))
+  ver <- packageDescription("anchors", lib = mylib)$Version
+  builddate <- packageDescription("anchors", lib = mylib)$Date
+  cat(paste("\n## anchors version ", ver, " ", builddate, "\n", sep = "")) 
+  cat("## See http://wand.stanford.edu/anchors for additional documentation and support.\n", sep="")
+#  cat("## Contact Jonathan Wand <wand(at)stanford.edu> with comments about software.\n", sep="")
+#  cat("##\n", sep="")
+}

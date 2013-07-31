@@ -1,0 +1,35 @@
+\begin{thebibliography}{xx}
+
+\harvarditem[King et~al.]{King, Murray, Salomon, \harvardand\
+  Tandon}{2004}{king:2004}
+King, Gary, C.J.L. Murray, J.A. Salomon, \harvardand\ A. Tandon. 2004.
+\newblock ``{Enhancing the Validity and Cross-Cultural Comparability of
+  Measurement in Survey Research}.'' {\em American Political Science Review}
+  98~(01): 191--207.
+
+\harvarditem{King \harvardand\ Wand}{2007}{king.wand:2007}
+King, Gary, \harvardand\ Jonathan Wand. 2007.
+\newblock ``Comparing Incomparable Survey Responses: New Tools for Anchoring
+  Vignettes.'' {\em Political Analysis} 15: 46--66.
+
+\harvarditem{Wand}{2007a}{wand:2007a}
+Wand, Jonathan. 2007a.
+\newblock ``Credible Comparisons Using Interpersonally Incomparable Data:
+  Ranking self-evaluations relative to anchoring vignettes or other common
+  survey questions.'' Stanford University.
+\newline\harvardurl{\texttt{http://wand.stanford.edu/anchors/wand\_anchors.pdf%
+}}
+
+\harvarditem{Wand}{2007b}{wand:2007}
+Wand, Jonathan. 2007b.
+\newblock ``Surveys with Anchoring Vignettes: Theory and Practice.'' Stanford
+  University, mimeo.
+
+\harvarditem[Wand, King, \harvardand\ Lau]{Wand, King, \harvardand\
+  Lau}{2011}{Wand+King+Lau:2011}
+Wand, Jonathan, Gary King, \harvardand\ Olivia Lau. 2011.
+\newblock ``\pkg{anchors}: Software for Anchoring Vignette Data.'' {\em Journal
+  of Statistical Software} 42~(3): 1--25.
+\newline\harvardurl{http://www.jstatsoft.org/v42/i03/}
+
+\end{thebibliography}

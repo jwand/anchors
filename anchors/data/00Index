@@ -1,0 +1,9 @@
+chopitsim  Simulated Data for test chopit function
+mexchn     China-Mexico political efficacy data 
+poleff     Simulated Poltical Efficacy Data 
+poleffna   Simulated Poltical Efficacy Data with NA (demo only, don't use)
+freedom    Individual freedom of speech data
+sleep      Sleep data for china
+selfcare   Self-care data for china
+table1     Reference from Table 1 of King and Wand (2007)
+table1src  Specific response values that have inequalities to create table1
